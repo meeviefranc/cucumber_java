@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -44,6 +45,7 @@ public class commonStepDef {
         page.getGoogleBtn().click();
         page.setUserName(username);
         page.getUsernameNext().click();
+        TimeUnit.SECONDS.sleep(8);
         page.setPassword(pwd);
         page.getpwdNext().click();
     }

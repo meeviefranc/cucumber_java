@@ -6,12 +6,13 @@ import com.codeborne.selenide.Condition;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.junit.Assert;
 
 import java.io.File;
 
 
-public class addAVideoStepDef extends commonStepDef {
+public class videoIndexerStepDef extends commonStepDef {
 
     private loginPage loginPage;
     private samplesPage samplesPage;
@@ -45,7 +46,7 @@ public class addAVideoStepDef extends commonStepDef {
         }
     }
 
-    @And("^user waits for (\\d+) seconds$")
+    @And("^I wait for (\\d+) seconds$")
     public void userWaitsForSeconds(String second) throws Throwable {
         long milliseconds = Integer.parseInt(second) * 1000;
         try {
@@ -94,5 +95,73 @@ public class addAVideoStepDef extends commonStepDef {
     public void filenameIsDisplayedInTheFilenameTextbox(String fName) throws Throwable {
         samplesPage page = new samplesPage();
         Assert.assertEquals("Filename displayed does not match.", fName, page.getFNameDisplayed().getValue());
+    }
+
+    @When("^I select \"([^\"]*)\" in \"([^\"]*)\" list box$")
+    public void iSelectInListBox(String option, String lbox) throws Throwable {
+        samplesPage page = new samplesPage();
+        page.getVSLListBox().click();
+        page.getVSLLangOption(option).click();
+    }
+
+
+    @Then("^\"([^\"]*)\" listbox displays \"([^\"]*)\"$")
+    public void listboxDisplays(String lbox, String option) throws Throwable {
+        samplesPage page = new samplesPage();
+        if (lbox.equalsIgnoreCase("Video Source Language")) {
+            Assert.assertEquals("Option selected did not match.", option, page.getVSLListBox().getText());
+        } else {
+            Assert.assertEquals("Option did not match.", option, page.getPrivacyOption().getText());
+        }
+    }
+
+    @And("^Advanced settings link is available$")
+    public void advanceSettingsLinkIsAvailable() throws Throwable {
+       samplesPage page = new samplesPage();
+       Assert.assertEquals("Advanced Settings not found.", "Advanced settings", page.getAdvSetting().getText());
+    }
+
+    @And("^I click on \"([^\"]*)\" button$")
+    public void iClickOnButton(String btn) throws Throwable {
+        samplesPage page = new samplesPage();
+        if(btn.equalsIgnoreCase("Add")) {
+            page.getAddBtn().click();
+        } else {
+            page.getUplIndex().click();
+        }
+    }
+
+    @And("^I click on privacy checkbox$")
+    public void iClickOnPrivacyCheckbox() throws Throwable {
+        samplesPage page = new samplesPage();
+        page.getPrivacyChkBox().click();
+    }
+
+    @Then("^upload video confirmation appears$")
+    public void uploadVideoConfirmationAppears() throws Throwable {
+        samplesPage page = new samplesPage();
+        String expConfirm = page.getUplConfirm().waitUntil(Condition.appear, 15000).getText().trim();
+        Assert.assertEquals("100 Percent upload confirmation cannot be found, please check.","100%", expConfirm);
+
+    }
+
+    @And("^I click on the \"([^\"]*)\" video$")
+    public void iClickOnTheVideo(String vidTitle) throws Throwable {
+        samplesPage page = new samplesPage();
+        page.getVidLink(vidTitle).click();
+    }
+
+    @Then("^I should see the player for the video$")
+    public void iShouldSeeThePlayerForTheVideo() throws Throwable {
+        samplesPage page = new samplesPage();
+        Assert.assertTrue("Video player for selected video not found.",page.getVidPlayer().waitUntil(Condition.appear, 15000).isDisplayed());
+    }
+
+    @And("^I should see \"([^\"]*)\" on \"([^\"]*)\" insight$")
+    public void iShouldSeeOnInsight(String expText, String component) throws Throwable {
+        samplesPage page = new samplesPage();
+
+        String actText = page.getVidComponent(component).text().trim();
+        Assert.assertTrue("Text did not match.", actText.contains(expText));
     }
 }

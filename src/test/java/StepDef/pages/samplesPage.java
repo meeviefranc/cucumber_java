@@ -50,4 +50,74 @@ public class samplesPage {
         return $("#leaveIndexingAction > span");
     }
 
+    public SelenideElement getVSLListBox() {
+        return $("#indexingLanguage > p-dropdown > div > div.ui-dropdown-label-container.ng-tns-c11-4 > span > span");
+    }
+
+    public SelenideElement getVSLLangOption(String option) {
+        String locLang = String.format("//span[contains(@aria-label,'%s') and contains(text(),'%s')]", option, option);
+        return $(By.xpath(locLang));
+    }
+
+    public SelenideElement getPrivacyOption() {
+        return $("#indexingPrivacy > p-dropdown > div > div.ui-dropdown-label-container.ng-tns-c11-5 > span");
+    }
+
+    public SelenideElement getAdvSetting() {
+        return $("#advancedSettingsButton > span");
+    }
+
+    public SelenideElement getAddBtn() {
+        return $("#addURLButton");
+    }
+
+    public SelenideElement getPrivacyChkBox() {
+        return $("#mat-mdc-dialog-0 > div > div > app-vi-dialog > div > div.mat-mdc-dialog-content.mdc-dialog__content.dialog-container > vi-upload-dialog > footer > vi-upload-consent > vi-checkbox-with-label > div > label");
+    }
+
+    public SelenideElement getUplIndex() {
+        return $("#uploadButtonAction");
+    }
+
+    public SelenideElement getUplConfirm() {
+        return $(By.xpath("//span[contains(@class, 'percentage')]"));
+    }
+
+    public SelenideElement getVidLink(String vidTitle) {
+        String vidlink = String.format("//span[contains(@title,'%s')]", vidTitle);
+        return $(By.xpath(vidlink));
+    }
+
+    public SelenideElement getVidPlayer() {
+        return $(By.xpath("//video[contains(@src,'videoindexer.ai')]"));
+    }
+
+    public SelenideElement getVidComponent(String component) {
+        String actPath = null;
+        switch (component) {
+            case "People":
+                actPath = String.format("//section[contains(@id,'%s')]","facesComponent");
+                break;
+            case "Topic":
+                actPath = String.format("//section[contains(@class,'%s')]","topics-component");
+                break;
+            case "Audio Effects":
+                actPath = String.format("//section[contains(@id,'%s')]","acousticEventsComponent");
+                break;
+            case "Keywords":
+                actPath = String.format("//section[contains(@id,'%s')]","keywordsComponent");
+                break;
+            case "Labels":
+                actPath = String.format("//section[contains(@id,'%s')]","labelsComponent");
+                break;
+            case "Named Entities":
+                actPath = String.format("//section[contains(@id,'%s')]","mentionedEntitiesComponent");
+                break;
+            default:
+                break;
+        }
+        return $(By.xpath(actPath));
+    }
+
+
 }
