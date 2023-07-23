@@ -25,6 +25,8 @@ public class commonStepDef {
 
     private String vfolder = "C:\\testvid";
 
+    private String vulr = "https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/c19ab92882";
+
     private loginPage loginPage;
 
     public void launchurl() throws Throwable {
