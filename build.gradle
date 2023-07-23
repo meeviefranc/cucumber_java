@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'ExcelCompare'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.13'
+    testImplementation 'junit:junit:4.13'
+    compile 'junit:junit:4.13'
+    
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    testCompile 'info.cukes:cucumber-java:1.2.4'
+    testCompile 'info.cukes:cucumber-junit:1.2.4'
+
+    implementation 'org.apache.poi:poi:5.0.0'
+    implementation 'org.apache.poi:poi-ooxml:5.0.0'
+}
+
+task cucumberTest(type: Test) {
+    include '**/cukesTest*'
+}
+
+
