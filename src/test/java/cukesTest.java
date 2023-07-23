@@ -1,11 +1,11 @@
-import cucumber.api.junit.Cucumber;
 import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/addAVideo.feature",
-        glue= "StepDef",
+        features = "src/test/resources/features/addAVideo.feature:13",
+        glue = "StepDef",
         strict = true,
         plugin = {"pretty",
                 "html:target/cucumberReports/cucumber.html",

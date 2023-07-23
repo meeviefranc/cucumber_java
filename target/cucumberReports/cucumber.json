@@ -3,19 +3,19 @@
     "line": 1,
     "elements": [
       {
-        "line": 3,
-        "name": "[1] Verify Upload screen",
+        "line": 13,
+        "name": "[2] Verify Upload using Browse For files",
         "description": "",
-        "id": "happy-path-tests-for-ai-video-indexer;[1]-verify-upload-screen",
+        "id": "happy-path-tests-for-ai-video-indexer;[2]-verify-upload-using-browse-for-files",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 12985845800,
+              "duration": 12199034600,
               "status": "passed"
             },
-            "line": 4,
+            "line": 14,
             "name": "I login to videoindexer using google email",
             "match": {
               "location": "addAVideoStepDef.launchAndLogin()"
@@ -24,10 +24,10 @@
           },
           {
             "result": {
-              "duration": 10007393200,
+              "duration": 10018562800,
               "status": "passed"
             },
-            "line": 5,
+            "line": 15,
             "name": "user waits for 10 seconds",
             "match": {
               "arguments": [
@@ -42,10 +42,10 @@
           },
           {
             "result": {
-              "duration": 182329200,
+              "duration": 167912000,
               "status": "passed"
             },
-            "line": 6,
+            "line": 16,
             "name": "I click on Samples link",
             "match": {
               "location": "addAVideoStepDef.iClickOnSamplesLink()"
@@ -54,10 +54,10 @@
           },
           {
             "result": {
-              "duration": 187731400,
+              "duration": 199251800,
               "status": "passed"
             },
-            "line": 7,
+            "line": 17,
             "name": "I click on Upload button",
             "match": {
               "location": "addAVideoStepDef.iClickOnUploadButton()"
@@ -66,10 +66,10 @@
           },
           {
             "result": {
-              "duration": 10013311700,
+              "duration": 10009484600,
               "status": "passed"
             },
-            "line": 8,
+            "line": 18,
             "name": "user waits for 10 seconds",
             "match": {
               "arguments": [
@@ -84,37 +84,143 @@
           },
           {
             "result": {
-              "duration": 111582000,
+              "duration": 201868800,
               "status": "passed"
             },
-            "line": 9,
-            "name": "I should see the \"Browse for files\" button",
+            "line": 19,
+            "name": "I click on \"Browse for files\" button to upload file \"GovTechImNotAValidVideo.txt\"",
             "match": {
               "arguments": [
                 {
                   "val": "Browse for files",
-                  "offset": 18
+                  "offset": 12
+                },
+                {
+                  "val": "upload file",
+                  "offset": 40
+                },
+                {
+                  "val": "GovTechImNotAValidVideo.txt",
+                  "offset": 53
                 }
               ],
-              "location": "addAVideoStepDef.iShouldSeeTheButton(String)"
+              "location": "addAVideoStepDef.iClickOnButton(String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 51242000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "message \"File type is not supported\" appears in the upload pop up window",
+            "match": {
+              "arguments": [
+                {
+                  "val": "File type is not supported",
+                  "offset": 9
+                }
+              ],
+              "location": "addAVideoStepDef.messageAppearsInTheUploadPopUpWindow(String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 102132600,
+              "duration": 52271600,
               "status": "passed"
             },
-            "line": 10,
-            "name": "I should see the \"Enter URL\" button",
+            "line": 21,
+            "name": "filename \"GovTechImNotAValidVideo\" is displayed in the filename textbox",
+            "match": {
+              "arguments": [
+                {
+                  "val": "GovTechImNotAValidVideo",
+                  "offset": 10
+                }
+              ],
+              "location": "addAVideoStepDef.filenameIsDisplayedInTheFilenameTextbox(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 112831200,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I click on Cancel button",
+            "match": {
+              "location": "addAVideoStepDef.iClickOnCancelButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 111887900,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I leave Upload and Index page",
+            "match": {
+              "location": "addAVideoStepDef.iLeaveUploadAndIndexPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 125023900,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I click on Upload button",
+            "match": {
+              "location": "addAVideoStepDef.iClickOnUploadButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10002134600,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "user waits for 10 seconds",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 15
+                }
+              ],
+              "location": "addAVideoStepDef.userWaitsForSeconds(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 527784400,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I click on \"Enter URL\" button to enter url \"https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/c19ab92882\"",
             "match": {
               "arguments": [
                 {
                   "val": "Enter URL",
-                  "offset": 18
+                  "offset": 12
+                },
+                {
+                  "val": "enter url",
+                  "offset": 33
+                },
+                {
+                  "val": "https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/c19ab92882",
+                  "offset": 44
                 }
               ],
-              "location": "addAVideoStepDef.iShouldSeeTheButton(String)"
+              "location": "addAVideoStepDef.iClickOnButton(String,String,String)"
             },
             "keyword": "And "
           }

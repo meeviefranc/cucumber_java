@@ -8,6 +8,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 
+import java.io.File;
+
 
 public class addAVideoStepDef extends commonStepDef {
 
@@ -51,5 +53,46 @@ public class addAVideoStepDef extends commonStepDef {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    @And("^I click on \"([^\"]*)\" button to (upload file|enter url) \"([^\"]*)\"$")
+    public void iClickOnButton(String btnLabel, String action, String fName) throws Throwable {
+        samplesPage page = new samplesPage();
+        if (action.equalsIgnoreCase("upload file")) {
+            File targetFile = new File(getProps("vidfolder") + fName);
+            page.getBrowseFileUpload().uploadFile(targetFile);
+        } else {
+            page.getUploadEnterURLLink().click();
+            page.getURLDisplayed().setValue(fName);
+        }
+    }
+
+    @And("^I close the browser$")
+    public void iCloseTheBrowser() throws Throwable {
+        closeurl();
+    }
+
+    @Then("^message \"([^\"]*)\" appears in the upload pop up window$")
+    public void messageAppearsInTheUploadPopUpWindow(String expMsg) throws Throwable {
+        samplesPage page = new samplesPage();
+        Assert.assertEquals("File Validation message does not match.", expMsg, page.getFileValMsg().text());
+    }
+
+    @And("^I click on Cancel button$")
+    public void iClickOnCancelButton() throws Throwable {
+        samplesPage page = new samplesPage();
+        page.getCancelBtn().click();
+    }
+
+    @And("^I leave Upload and Index page$")
+    public void iLeaveUploadAndIndexPage() throws Throwable {
+        samplesPage page = new samplesPage();
+        page.getLeaveBtn().click();
+    }
+
+    @And("^filename \"([^\"]*)\" is displayed in the filename textbox$")
+    public void filenameIsDisplayedInTheFilenameTextbox(String fName) throws Throwable {
+        samplesPage page = new samplesPage();
+        Assert.assertEquals("Filename displayed does not match.", fName, page.getFNameDisplayed().getValue());
     }
 }

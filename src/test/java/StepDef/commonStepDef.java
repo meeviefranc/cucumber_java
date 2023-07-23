@@ -6,30 +6,27 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.springframework.stereotype.Component;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Properties;
 
 import static com.codeborne.selenide.Selenide.open;
 
-@Component
 public class commonStepDef {
-
-    private String url = "https://videoindexer.ai/";
-
-    private String username = "MVGovTechExam23@gmail.com";
-
-    private String pwd = "videoanalytics101";
-
-    private String cdriver = "C:\\chromedriver\\chromedriver.exe";
-
-    private String vfolder = "C:\\testvid";
-
-    private String vulr = "https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/c19ab92882";
 
     private loginPage loginPage;
 
     public void launchurl() throws Throwable {
+        // get login setup from properties file
+        String url = getProps("testurl");
+        String username = getProps("username");
+        String pwd = getProps("password");
+        String cdriver = getProps("chromedriver");
+        String vfolder = getProps("vidfolder");
+
+        // launch url
         loginPage page = new loginPage();
         System.setProperty("webdriver.chrome.driver", cdriver);
         ChromeOptions options = new ChromeOptions();
@@ -42,6 +39,8 @@ public class commonStepDef {
         WebDriverRunner.setWebDriver(driver);
         WebDriverRunner.clearBrowserCache();
         open(url);
+
+        // login
         page.getGoogleBtn().click();
         page.setUserName(username);
         page.getUsernameNext().click();
@@ -49,5 +48,33 @@ public class commonStepDef {
         page.getpwdNext().click();
     }
 
+    public String getProps(String propname) throws IOException {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("src\\test\\resources\\cucumber.properties"));
+        String propvalue = null;
+        switch (propname) {
+            case "testurl":
+                propvalue = properties.getProperty("testurl");
+                break;
+            case "username":
+                propvalue = properties.getProperty("username");
+                break;
+            case "password":
+                propvalue = properties.getProperty("password");
+                break;
+            case "chromedriver":
+                propvalue = properties.getProperty("chromedriver");
+                break;
+            case "vidfolder":
+                propvalue = properties.getProperty("vidfolder");
+                break;
+            default:
+                break;
+        }
+        return propvalue;
+    }
 
+    public void closeurl() {
+        WebDriverRunner.closeWebDriver();
+    }
 }
