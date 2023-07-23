@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'ExcelCompare'
+group 'cukes-selenide'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -17,6 +17,11 @@ dependencies {
     compile 'junit:junit:4.13'
     
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile group: 'io.cucumber', name: 'cucumber-spring', version: '7.13.0'
+    compile "org.springframework:spring-tx:4.2.4.RELEASE"
+    compile "org.springframework:spring-context-support:4.2.4.RELEASE"
+    compile "org.springframework:spring-web:4.2.4.RELEASE"
+    compile "com.codeborne:selenide:5.5.0"
     testCompile 'info.cukes:cucumber-java:1.2.4'
     testCompile 'info.cukes:cucumber-junit:1.2.4'
 
