@@ -21,4 +21,8 @@ public class samplesPage {
         return $("#enterUrlAction > span");
     }
 
+    public SelenideElement getBrowseFileLink() {
+        return $("#browseForFileAction > span");
+    }
+
 }

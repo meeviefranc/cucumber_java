@@ -41,14 +41,19 @@ formatter.step({
 });
 formatter.step({
   "line": 9,
-  "name": "I should see the \"Enter URL\" button",
+  "name": "I should see the \"Browse for files\" button",
   "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "I should see the \"Enter URL\" button",
+  "keyword": "And "
 });
 formatter.match({
   "location": "addAVideoStepDef.launchAndLogin()"
 });
 formatter.result({
-  "duration": 12025681100,
+  "duration": 12985845800,
   "status": "passed"
 });
 formatter.match({
@@ -61,21 +66,21 @@ formatter.match({
   "location": "addAVideoStepDef.userWaitsForSeconds(String)"
 });
 formatter.result({
-  "duration": 10013875400,
+  "duration": 10007393200,
   "status": "passed"
 });
 formatter.match({
   "location": "addAVideoStepDef.iClickOnSamplesLink()"
 });
 formatter.result({
-  "duration": 179447900,
+  "duration": 182329200,
   "status": "passed"
 });
 formatter.match({
   "location": "addAVideoStepDef.iClickOnUploadButton()"
 });
 formatter.result({
-  "duration": 175064400,
+  "duration": 187731400,
   "status": "passed"
 });
 formatter.match({
@@ -88,7 +93,20 @@ formatter.match({
   "location": "addAVideoStepDef.userWaitsForSeconds(String)"
 });
 formatter.result({
-  "duration": 10005215700,
+  "duration": 10013311700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Browse for files",
+      "offset": 18
+    }
+  ],
+  "location": "addAVideoStepDef.iShouldSeeTheButton(String)"
+});
+formatter.result({
+  "duration": 111582000,
   "status": "passed"
 });
 formatter.match({
@@ -101,8 +119,7 @@ formatter.match({
   "location": "addAVideoStepDef.iShouldSeeTheButton(String)"
 });
 formatter.result({
-  "duration": 1135700,
-  "error_message": "java.lang.NullPointerException\r\n\tat StepDef.addAVideoStepDef.iShouldSeeTheButton(addAVideoStepDef.java:38)\r\n\tat ✽.Then I should see the \"Enter URL\" button(src/test/resources/features/addAVideo.feature:9)\r\n",
-  "status": "failed"
+  "duration": 102132600,
+  "status": "passed"
 });
 });

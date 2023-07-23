@@ -6,4 +6,6 @@ Feature: Happy Path tests for AI Video Indexer
     And I click on Samples link
     And I click on Upload button
     And user waits for 10 seconds
-    Then I should see the "Enter URL" button
+    Then I should see the "Browse for files" button
+    And I should see the "Enter URL" button
+

@@ -2,6 +2,7 @@ package StepDef;
 
 import StepDef.pages.loginPage;
 import StepDef.pages.samplesPage;
+import com.codeborne.selenide.Condition;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -35,7 +36,11 @@ public class addAVideoStepDef extends commonStepDef {
     @Then("^I should see the \"([^\"]*)\" button$")
     public void iShouldSeeTheButton(String btnLabel) throws Throwable {
         samplesPage page = new samplesPage();
-        Assert.assertEquals("I did not find the button.", btnLabel, samplesPage.getUploadEnterURLLink().text());
+        if (btnLabel.equalsIgnoreCase("Enter URL")) {
+            Assert.assertEquals("I did not find the button.", btnLabel, page.getUploadEnterURLLink().waitUntil(Condition.appear, 15000).text());
+        } else {
+            Assert.assertEquals("I did not find the button.", btnLabel, page.getBrowseFileLink().waitUntil(Condition.appear, 15000).text());
+        }
     }
 
     @And("^user waits for (\\d+) seconds$")
