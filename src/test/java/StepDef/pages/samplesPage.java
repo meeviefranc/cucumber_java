@@ -1,5 +1,6 @@
 package StepDef.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
@@ -51,16 +52,17 @@ public class samplesPage {
     }
 
     public SelenideElement getVSLListBox() {
-        return $("#indexingLanguage > p-dropdown > div > div.ui-dropdown-label-container.ng-tns-c11-4 > span > span");
+        return $(By.xpath("//div[@id='indexingLanguage']")).waitUntil(Condition.appears,3000);
     }
 
     public SelenideElement getVSLLangOption(String option) {
         String locLang = String.format("//span[contains(@aria-label,'%s') and contains(text(),'%s')]", option, option);
-        return $(By.xpath(locLang));
+        return $(By.xpath(locLang)).waitUntil(Condition.appears,3000);
     }
 
     public SelenideElement getPrivacyOption() {
-        return $("#indexingPrivacy > p-dropdown > div > div.ui-dropdown-label-container.ng-tns-c11-5 > span");
+        return $(By.xpath("//div[@id='indexingPrivacy']")).waitUntil(Condition.appears,3000);
+//        return $("#indexingPrivacy > p-dropdown > div > div.ui-dropdown-label-container.ng-tns-c11-5 > span");
     }
 
     public SelenideElement getAdvSetting() {
@@ -119,5 +121,11 @@ public class samplesPage {
         return $(By.xpath(actPath));
     }
 
+    public SelenideElement getSearchBox() {
+        return $(By.xpath("//input[@title='Search']")).waitUntil(Condition.appears, 3000);
+    }
 
+    public SelenideElement getSearchResult() {
+        return $(By.xpath("//div[@class='item-row']")).waitUntil(Condition.appears, 3000);
+    }
 }

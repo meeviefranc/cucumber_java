@@ -17,3 +17,5 @@ Feature: Happy Path tests for AI Video Indexer - Video Insight
     And I should see "227 labels" on "Labels" insight
     And I should see "126 named entities" on "Named Entities" insight
     And I close the browser
+
+

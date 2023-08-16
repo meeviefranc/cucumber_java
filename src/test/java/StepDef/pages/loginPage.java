@@ -21,5 +21,4 @@ public class loginPage {
     public void setUserName(String username) {this.usernameBox.val(username);}
     public void setPassword(String password) {this.passwordBox.val(password);}
 
-
 }

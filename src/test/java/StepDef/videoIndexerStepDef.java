@@ -3,13 +3,18 @@ package StepDef;
 import StepDef.pages.loginPage;
 import StepDef.pages.samplesPage;
 import com.codeborne.selenide.Condition;
+import cucumber.api.Format;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import util.appDateTime;
 
 import java.io.File;
+import java.time.Clock;
+import java.time.ZoneId;
+import java.util.Date;
 
 
 public class videoIndexerStepDef extends commonStepDef {
@@ -163,5 +168,34 @@ public class videoIndexerStepDef extends commonStepDef {
 
         String actText = page.getVidComponent(component).text().trim();
         Assert.assertTrue("Text did not match.", actText.contains(expText));
+    }
+
+    @Given("^day is (.+)$")
+    public void dayIsSep(@Format("dd-MMM-yy") Date newDate) throws Throwable {
+        appDateTime.setToCustomClock(Clock.fixed(newDate.toInstant(), ZoneId.systemDefault()));
+    }
+
+
+    @And("^go back to orig date$")
+    public void goBackToOrigDate() {
+        appDateTime.resetToDefaultClock();
+    }
+
+    @And("^I enter \"([^\"]*)\" on the search box$")
+    public void iEnterOnTheSearchBox(String keyword) throws Throwable {
+        samplesPage page = new samplesPage();
+        page.getSearchBox().setValue(keyword);
+    }
+
+    @And("^I press Enter on the search box$")
+    public void iPressEnterOnTheSearchBox() throws Throwable {
+        samplesPage page = new samplesPage();
+        page.getSearchBox().pressEnter();
+    }
+
+    @Then("^I should see \"([^\"]*)\" on search results$")
+    public void iShouldSeeOnSearchResults(String vidTitle) throws Throwable {
+        samplesPage page = new samplesPage();
+        Assert.assertEquals("Video not found.", page.getSearchResult().text(), vidTitle);
     }
 }

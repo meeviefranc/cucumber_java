@@ -6,25 +6,25 @@
         "comments": [
           {
             "line": 2,
-            "value": "## happy path tests for ACs listed on User Story 1 - Add a Video"
+            "value": "## happy path tests for ACs listed on User Story 3 - Search Video"
           }
         ],
         "line": 4,
-        "name": "[1] Verify Upload screen",
+        "name": "[1] Verify Search box",
         "description": "",
-        "id": "happy-path-tests-for-ai-video-indexer---add-a-video;[1]-verify-upload-screen",
+        "id": "happy-path-tests-for-ai-video-indexer---search-video;[1]-verify-search-box",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 18706208100,
+              "duration": 26144486500,
               "status": "passed"
             },
             "comments": [
               {
                 "line": 5,
-                "value": "## page allows selection of a file for uploading or the user can supply a url to a video for indexing"
+                "value": "## page displays a search box where a search can be entered and click search will perform query"
               }
             ],
             "line": 6,
@@ -36,7 +36,7 @@
           },
           {
             "result": {
-              "duration": 10016513900,
+              "duration": 10008928000,
               "status": "passed"
             },
             "line": 7,
@@ -54,7 +54,7 @@
           },
           {
             "result": {
-              "duration": 178490800,
+              "duration": 168636000,
               "status": "passed"
             },
             "line": 8,
@@ -66,385 +66,63 @@
           },
           {
             "result": {
-              "duration": 184811600,
+              "duration": 10001514900,
               "status": "passed"
             },
             "line": 9,
-            "name": "I click on Upload button",
+            "name": "I wait for 10 seconds",
             "match": {
-              "location": "videoIndexerStepDef.iClickOnUploadButton()"
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 11
+                }
+              ],
+              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 10009946400,
+              "duration": 324660800,
               "status": "passed"
             },
             "line": 10,
-            "name": "I wait for 10 seconds",
+            "name": "I enter \"ignite\" on the search box",
             "match": {
               "arguments": [
                 {
-                  "val": "10",
-                  "offset": 11
-                }
-              ],
-              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 94782000,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I should see the \"Browse for files\" button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Browse for files",
-                  "offset": 18
-                }
-              ],
-              "location": "videoIndexerStepDef.iShouldSeeTheButton(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 83915600,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I should see the \"Enter URL\" button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Enter URL",
-                  "offset": 18
-                }
-              ],
-              "location": "videoIndexerStepDef.iShouldSeeTheButton(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 672817500,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "I close the browser",
-            "match": {
-              "location": "videoIndexerStepDef.iCloseTheBrowser()"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "line": 15,
-        "name": "[2] Verify Upload using Browse For files",
-        "description": "",
-        "id": "happy-path-tests-for-ai-video-indexer---add-a-video;[2]-verify-upload-using-browse-for-files",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 19993937000,
-              "status": "passed"
-            },
-            "comments": [
-              {
-                "line": 16,
-                "value": "## video source language can be specific, page allows privacy to be set, advance options available"
-              }
-            ],
-            "line": 17,
-            "name": "I login to videoindexer using google email",
-            "match": {
-              "location": "videoIndexerStepDef.launchAndLogin()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 10001218600,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I wait for 10 seconds",
-            "match": {
-              "arguments": [
-                {
-                  "val": "10",
-                  "offset": 11
-                }
-              ],
-              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 185520000,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "I click on Samples link",
-            "match": {
-              "location": "videoIndexerStepDef.iClickOnSamplesLink()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 184677800,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "I click on Upload button",
-            "match": {
-              "location": "videoIndexerStepDef.iClickOnUploadButton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 10010495100,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "I wait for 10 seconds",
-            "match": {
-              "arguments": [
-                {
-                  "val": "10",
-                  "offset": 11
-                }
-              ],
-              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 174261600,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "I click on \"Browse for files\" button to upload file \"GovTechImNotAValidVideo.txt\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Browse for files",
-                  "offset": 12
-                },
-                {
-                  "val": "upload file",
-                  "offset": 40
-                },
-                {
-                  "val": "GovTechImNotAValidVideo.txt",
-                  "offset": 53
-                }
-              ],
-              "location": "videoIndexerStepDef.iClickOnButton(String,String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 58786000,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "message \"File type is not supported\" appears in the upload pop up window",
-            "match": {
-              "arguments": [
-                {
-                  "val": "File type is not supported",
+                  "val": "ignite",
                   "offset": 9
                 }
               ],
-              "location": "videoIndexerStepDef.messageAppearsInTheUploadPopUpWindow(String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 56311800,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "filename \"GovTechImNotAValidVideo\" is displayed in the filename textbox",
-            "match": {
-              "arguments": [
-                {
-                  "val": "GovTechImNotAValidVideo",
-                  "offset": 10
-                }
-              ],
-              "location": "videoIndexerStepDef.filenameIsDisplayedInTheFilenameTextbox(String)"
+              "location": "videoIndexerStepDef.iEnterOnTheSearchBox(String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 310374200,
+              "duration": 220631700,
               "status": "passed"
             },
-            "line": 25,
-            "name": "I select \"Danish\" in \"Video Source Language\" list box",
+            "line": 11,
+            "name": "I press Enter on the search box",
             "match": {
-              "arguments": [
-                {
-                  "val": "Danish",
-                  "offset": 10
-                },
-                {
-                  "val": "Video Source Language",
-                  "offset": 22
-                }
-              ],
-              "location": "videoIndexerStepDef.iSelectInListBox(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 41752000,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "\"Video Source Language\" listbox displays \"Danish\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Video Source Language",
-                  "offset": 1
-                },
-                {
-                  "val": "Danish",
-                  "offset": 42
-                }
-              ],
-              "location": "videoIndexerStepDef.listboxDisplays(String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 50901200,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "\"Privacy\" listbox displays \"Private\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Privacy",
-                  "offset": 1
-                },
-                {
-                  "val": "Private",
-                  "offset": 28
-                }
-              ],
-              "location": "videoIndexerStepDef.listboxDisplays(String,String)"
+              "location": "videoIndexerStepDef.iPressEnterOnTheSearchBox()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 45248200,
+              "duration": 5002459000,
               "status": "passed"
             },
-            "line": 28,
-            "name": "Advanced settings link is available",
-            "match": {
-              "location": "videoIndexerStepDef.advanceSettingsLinkIsAvailable()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 109621300,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "I click on Cancel button",
-            "match": {
-              "location": "videoIndexerStepDef.iClickOnCancelButton()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 139322600,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "I leave Upload and Index page",
-            "match": {
-              "location": "videoIndexerStepDef.iLeaveUploadAndIndexPage()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 729876500,
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "I close the browser",
-            "match": {
-              "location": "videoIndexerStepDef.iCloseTheBrowser()"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "line": 33,
-        "name": "[3] Verify Upload using URL",
-        "description": "",
-        "id": "happy-path-tests-for-ai-video-indexer---add-a-video;[3]-verify-upload-using-url",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 17623174000,
-              "status": "passed"
-            },
-            "comments": [
-              {
-                "line": 34,
-                "value": "## clicking upload button will start indexing process and notification is received once completed"
-              }
-            ],
-            "line": 35,
-            "name": "I login to videoindexer using google email",
-            "match": {
-              "location": "videoIndexerStepDef.launchAndLogin()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 10011013800,
-              "status": "passed"
-            },
-            "line": 36,
-            "name": "I wait for 10 seconds",
+            "line": 12,
+            "name": "I wait for 5 seconds",
             "match": {
               "arguments": [
                 {
-                  "val": "10",
+                  "val": "5",
                   "offset": 11
                 }
               ],
@@ -454,453 +132,29 @@
           },
           {
             "result": {
-              "duration": 172579900,
+              "duration": 136178200,
               "status": "passed"
             },
-            "line": 37,
-            "name": "I click on Samples link",
-            "match": {
-              "location": "videoIndexerStepDef.iClickOnSamplesLink()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 184043000,
-              "status": "passed"
-            },
-            "line": 38,
-            "name": "I click on Upload button",
-            "match": {
-              "location": "videoIndexerStepDef.iClickOnUploadButton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 10001645300,
-              "status": "passed"
-            },
-            "line": 39,
-            "name": "I wait for 10 seconds",
-            "match": {
-              "arguments": [
-                {
-                  "val": "10",
-                  "offset": 11
-                }
-              ],
-              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 796214900,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "I click on \"Enter URL\" button to enter url \"https://media.istockphoto.com/id/1151597371/video/the-couple-with-camping-backpacks-walking-to-the-mountain-top-slow-motion.mp4?s\u003dmp4-640x640-is\u0026k\u003d20\u0026c\u003dXsDSJmKoymKcQWzj0ke7T0pFPU82tMXHCjIrpKWYasE\u003d\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Enter URL",
-                  "offset": 12
-                },
-                {
-                  "val": "enter url",
-                  "offset": 33
-                },
-                {
-                  "val": "https://media.istockphoto.com/id/1151597371/video/the-couple-with-camping-backpacks-walking-to-the-mountain-top-slow-motion.mp4?s\u003dmp4-640x640-is\u0026k\u003d20\u0026c\u003dXsDSJmKoymKcQWzj0ke7T0pFPU82tMXHCjIrpKWYasE\u003d",
-                  "offset": 44
-                }
-              ],
-              "location": "videoIndexerStepDef.iClickOnButton(String,String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 156431100,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "I click on \"Add\" button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Add",
-                  "offset": 12
-                }
-              ],
-              "location": "videoIndexerStepDef.iClickOnButton(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 102972500,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "I click on privacy checkbox",
-            "match": {
-              "location": "videoIndexerStepDef.iClickOnPrivacyCheckbox()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 551947400,
-              "status": "passed"
-            },
-            "line": 43,
-            "name": "I click on \"Upload + index\" button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Upload + index",
-                  "offset": 12
-                }
-              ],
-              "location": "videoIndexerStepDef.iClickOnButton(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 10003352900,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "I wait for 10 seconds",
-            "match": {
-              "arguments": [
-                {
-                  "val": "10",
-                  "offset": 11
-                }
-              ],
-              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 127949800,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "upload video confirmation appears",
-            "match": {
-              "location": "videoIndexerStepDef.uploadVideoConfirmationAppears()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 713270200,
-              "status": "passed"
-            },
-            "line": 46,
-            "name": "I close the browser",
-            "match": {
-              "location": "videoIndexerStepDef.iCloseTheBrowser()"
-            },
-            "keyword": "And "
-          }
-        ]
-      }
-    ],
-    "name": "Happy Path tests for AI Video Indexer - Add A Video",
-    "description": "",
-    "id": "happy-path-tests-for-ai-video-indexer---add-a-video",
-    "keyword": "Feature",
-    "uri": "addAVideo.feature"
-  },
-  {
-    "line": 1,
-    "elements": [
-      {
-        "comments": [
-          {
-            "line": 2,
-            "value": "## happy path tests for ACs listed on User Story 2 - Video Insight"
-          }
-        ],
-        "line": 4,
-        "name": "[1] Verify Insights available for a video",
-        "description": "",
-        "id": "happy-path-tests-for-ai-video-indexer---video-insight;[1]-verify-insights-available-for-a-video",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 17162722000,
-              "status": "passed"
-            },
-            "comments": [
-              {
-                "line": 5,
-                "value": "## page has insight sections : people, topics, audio effects, keywords, labels, named entities"
-              }
-            ],
-            "line": 6,
-            "name": "I login to videoindexer using google email",
-            "match": {
-              "location": "videoIndexerStepDef.launchAndLogin()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 10011841500,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "I wait for 10 seconds",
-            "match": {
-              "arguments": [
-                {
-                  "val": "10",
-                  "offset": 11
-                }
-              ],
-              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 175807300,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "I click on Samples link",
-            "match": {
-              "location": "videoIndexerStepDef.iClickOnSamplesLink()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 10011012600,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "I wait for 10 seconds",
-            "match": {
-              "arguments": [
-                {
-                  "val": "10",
-                  "offset": 11
-                }
-              ],
-              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 151301600,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I click on the \"Ignite 2016 - Keynote\" video",
+            "line": 13,
+            "name": "I should see \"Ignite 2016 - Keynote\" on search results",
             "match": {
               "arguments": [
                 {
                   "val": "Ignite 2016 - Keynote",
-                  "offset": 16
+                  "offset": 14
                 }
               ],
-              "location": "videoIndexerStepDef.iClickOnTheVideo(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 20006003500,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I wait for 20 seconds",
-            "match": {
-              "arguments": [
-                {
-                  "val": "20",
-                  "offset": 11
-                }
-              ],
-              "location": "videoIndexerStepDef.userWaitsForSeconds(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 120712300,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I should see the player for the video",
-            "match": {
-              "location": "videoIndexerStepDef.iShouldSeeThePlayerForTheVideo()"
+              "location": "videoIndexerStepDef.iShouldSeeOnSearchResults(String)"
             },
             "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 126880600,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "I should see \"73 people\" on \"People\" insight",
-            "match": {
-              "arguments": [
-                {
-                  "val": "73 people",
-                  "offset": 14
-                },
-                {
-                  "val": "People",
-                  "offset": 29
-                }
-              ],
-              "location": "videoIndexerStepDef.iShouldSeeOnInsight(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 85375500,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I should see \"4 topics\" on \"Topic\" insight",
-            "match": {
-              "arguments": [
-                {
-                  "val": "4 topics",
-                  "offset": 14
-                },
-                {
-                  "val": "Topic",
-                  "offset": 28
-                }
-              ],
-              "location": "videoIndexerStepDef.iShouldSeeOnInsight(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 63946400,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I should see \"4 audio effects\" on \"Audio Effects\" insight",
-            "match": {
-              "arguments": [
-                {
-                  "val": "4 audio effects",
-                  "offset": 14
-                },
-                {
-                  "val": "Audio Effects",
-                  "offset": 35
-                }
-              ],
-              "location": "videoIndexerStepDef.iShouldSeeOnInsight(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 56835900,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "I should see \"30 keywords\" on \"Keywords\" insight",
-            "match": {
-              "arguments": [
-                {
-                  "val": "30 keywords",
-                  "offset": 14
-                },
-                {
-                  "val": "Keywords",
-                  "offset": 31
-                }
-              ],
-              "location": "videoIndexerStepDef.iShouldSeeOnInsight(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 80021900,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I should see \"227 labels\" on \"Labels\" insight",
-            "match": {
-              "arguments": [
-                {
-                  "val": "227 labels",
-                  "offset": 14
-                },
-                {
-                  "val": "Labels",
-                  "offset": 30
-                }
-              ],
-              "location": "videoIndexerStepDef.iShouldSeeOnInsight(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 92354700,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I should see \"126 named entities\" on \"Named Entities\" insight",
-            "match": {
-              "arguments": [
-                {
-                  "val": "126 named entities",
-                  "offset": 14
-                },
-                {
-                  "val": "Named Entities",
-                  "offset": 38
-                }
-              ],
-              "location": "videoIndexerStepDef.iShouldSeeOnInsight(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 711663700,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "I close the browser",
-            "match": {
-              "location": "videoIndexerStepDef.iCloseTheBrowser()"
-            },
-            "keyword": "And "
           }
         ]
       }
     ],
-    "name": "Happy Path tests for AI Video Indexer - Video Insight",
+    "name": "Happy Path tests for AI Video Indexer - Search Video",
     "description": "",
-    "id": "happy-path-tests-for-ai-video-indexer---video-insight",
+    "id": "happy-path-tests-for-ai-video-indexer---search-video",
     "keyword": "Feature",
-    "uri": "videoInsight.feature"
+    "uri": "src/test/resources/features/searchVideo.feature"
   }
 ]
