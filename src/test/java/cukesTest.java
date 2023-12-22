@@ -4,7 +4,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/searchVideo.feature",
+//        features = "src/test/resources/features/addAVideo.feature",
+        features = "src/test/resources/features/videoInsight.feature",
+//        features = "src/test/resources/features/searchVideo.feature",
         glue = "StepDef",
         strict = true,
         plugin = {"pretty",

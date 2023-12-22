@@ -4,7 +4,7 @@ This is a simple test framework using Java Selenide performing UI tests for the 
 
 ## Description
 
-Tests includes navigation and assertions on uploading a video and on the elements of selected video insights page.
+Tests includes navigation and assertions on uploading videos and on the elements of selected video insights page.
 
 ## Getting Started
 
